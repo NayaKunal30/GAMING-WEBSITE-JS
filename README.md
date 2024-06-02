@@ -24,7 +24,7 @@ CSS: For styling the application.
 🔧 Installation
 
 1.Clone the repository:
-git clone https://github.com/your-username/GameZone.git
+git clone [https://github.com/your-username/GameZone.git](https://github.com/NayaKunal30/GameZone-Js.git)
 
 2.Navigate to the project directory:
 cd game-landing-page
