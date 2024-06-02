@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR GAME KK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="newgame.js"></script> -->
+</head>
+
+<body>
+    <audio id="background-music" loop >
+        <source src="bgmusic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    <div class="game">
+        <audio id="game-over-sound">
+            <source src="gameoversound.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="game-start-sound">
+            <source src="gamestarted.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="score"></div>
+        <div class="highScore"></div>
+        <br>
+        <div class="startScreen">
+            <br>
+            <button id="start-btn" class="ClickToStart glowing-btn" > Click here to start the game</button>
+            <h5>Build By ~ KUNAL NAYAK</h5>
+            <p> INSTRUCTIONS: <br>
+                Use Arrow keys to move the car <br>
+                If you hit any car then game will end</p>
+        </div>
+        <div class="gameArea"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <audio id="winSound">
+        <source src="success-fanfare-trumpets-6185.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="loseSound">
+        <source src="SW001_8-Bit-Games_Music_Element_Fail_01_Arp.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="drawSound">
+        <source src="SW003_Robot_Voice_26_High_Register_Cute_R2D2_Crazy_05.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="navbar">
+    </div>
+    <br>
+    <br>
+    <div id="game">
+        <div class="section" id="user-section">
+            <img src="USER.png" alt="">
+            <br>
+            <div class="image-slot">
+                <img src="fistleft.png" alt="Placeholder" style="width: 100%;">
+
+            </div>
+            <div>
+                <button class="button" id="rock">Rock</button>
+                <button class="button" id="paper">Paper</button>
+                <button class="button" id="scissors">Scissors</button>
+            </div>
+            <br>
+            <div id="user-result"></div>
+        </div>
+
+        <div class="section" id="computer-section">
+            <img src="COMP.png" alt="">
+            <br>
+            <div class="image-slot" id="computer-choice">
+                <img src="fistright.png" alt="Placeholder" style="width: 100%;">
+            </div>
+            <br>
+            <br>
+            <div id="computer-result"></div>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('rock').addEventListener('click', () => {
+            playGame('rock');
+            playButtonClickSound(); // Play button click sound
+        });
+
+        document.getElementById('paper').addEventListener('click', () => {
+            playGame('paper');
+            playButtonClickSound(); // Play button click sound
+        });
+
+        document.getElementById('scissors').addEventListener('click', () => {
+            playGame('scissors');
+            playButtonClickSound(); // Play button click sound
+        });
+
+        function playGame(userChoice) {
+            let cpuIndex = Math.floor(Math.random() * 3);
+            let cpuChoices = ["rock", "paper", "scissors"];
+            let cpuChoice = cpuChoices[cpuIndex];
+
+            let resultText;
+            let resultSound;
+
+            if (userChoice === cpuChoice) {
+                resultText = "It's a draw! Better luck next time.";
+                resultSound = "draw";
+            } else if (
+                (userChoice === "rock" && cpuChoice === "paper") ||
+                (userChoice === "paper" && cpuChoice === "scissors") ||
+                (userChoice === "scissors" && cpuChoice === "rock")
+            ) {
+                resultText = "Oops! You lose.";
+                resultSound = "lose";
+            } else {
+                resultText = "Congratulations! You win!";
+                resultSound = "win";
+            }
+
+            document.getElementById('user-result').innerHTML = `
+            <p>You chose <strong>${userChoice}</strong>.</p>
+            <p>${resultText}</p>
+        `;
+
+            document.getElementById('computer-result').innerHTML = `
+            <p>CPU chose <strong>${cpuChoice}</strong>.</p>
+            <p>${resultText}</p>
+        `;
+
+            playResultSound(resultSound); // Play result sound
+
+            // Swapping images
+            let userImage = document.querySelector('#user-section .image-slot img');
+            let computerImage = document.querySelector('#computer-section .image-slot img');
+
+            if (userChoice === "rock") {
+                userImage.src = "stonere.png";
+            } else if (userChoice === "paper") {
+                userImage.src = "paperre.png";
+            } else if (userChoice === "scissors") {
+                userImage.src = "scirrorre.png";
+            }
+
+            if (cpuChoice === "rock") {
+                computerImage.src = "stonere.png";
+            } else if (cpuChoice === "paper") {
+                computerImage.src = "paperre.png";
+            } else if (cpuChoice === "scissors") {
+                computerImage.src = "scirrorre.png";
+            }
+        }
+
+        // Function to play button click sound
+        function playButtonClickSound() {
+            let buttonClickSound = new Audio('button_click.mp3');
+            buttonClickSound.play();
+        }
+
+        // Function to play result sound (win, lose, or draw)
+        function playResultSound(result) {
+            let soundElement = document.getElementById(`${result}Sound`);
+            soundElement.play();
+        }
+    </script>
+
+</body>
+
+</html>

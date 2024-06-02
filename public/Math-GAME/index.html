@@ -1,0 +1,55 @@
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Game</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <audio id="background-music" autoplay loop volume="0.1">
+      <source src="backgroundmusic.wav" type="audio/mpeg">
+      
+    </audio>
+    <div class="container">
+      <h3>Fill In The Blank With Correct Number Or Operator</h3>
+      <div id="question"></div>
+      <button id="submit-btn">Submit</button>
+      <p id="error-msg">Some Demo Error Message</p>
+    </div>
+    <div class="controls-container">
+      <p id="result"></p>
+      <img src="mathgame.png" alt="">
+      <center><h3>Build by ~ KUNAL NAYAK</h3></center>
+      <br>
+      <br>
+      <button id="start-btn">Start Game</button>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+    <script>
+      function playSoundWithDelay() {
+        var sound = document.querySelector('#backgroundMusic');
+        sound.volume =0.1;
+        setTimeout(function () {
+          sound.play();
+        }, 2000); // 2000 milliseconds = 2 seconds delay
+      }
+      // Show the background image immediately without any delay
+      document.body.style.opacity = 1;
+      document.querySelector('.overlay').style.opacity = 0;
+      document.querySelector('.content').style.opacity = 1;
+      playSoundWithDelay();
+    </script>
+  </body>
+</html>
+
+         
+
+
+                  

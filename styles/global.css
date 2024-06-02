@@ -1,0 +1,150 @@
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+@keyframes glowingBackground {
+  0% {
+    background-color: #0c2742; /* Dark blue */
+  }
+  50% {
+    background-color: #001f3f; /* Darker blue */
+  }
+  100% {
+    background-color: #0c2742; /* Dark blue */
+  }
+}
+
+@keyframes glowingText {
+  0% {
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4, 0 0 60px #ff69b4, 0 0 70px #ff69b4;
+  }
+  50% {
+    text-shadow: 0 0 20px #8a2be2, 0 0 30px #8a2be2, 0 0 40px #8a2be2, 0 0 50px #8a2be2, 0 0 60px #8a2be2, 0 0 70px #8a2be2, 0 0 80px #8a2be2;
+  }
+  100% {
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4, 0 0 60px #ff69b4, 0 0 70px #ff69b4;
+  }
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+  overflow: auto; /* Enable scrolling */
+  animation: glowingBackground 5s ease infinite alternate; /* Glowing background animation */
+  background-image: url('/gaming-graphics.png'); /* Background image path */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center center; /* Center align the background image */
+}
+
+.heading-container {
+  text-align: center;
+  margin-bottom: 20px; /* Add margin to separate from the cards */
+  margin-top: 50px; /* Add top margin to shift the heading down */
+}
+
+.heading {
+  font-size: 3.5rem; /* Increased font size */
+  font-family: 'Montserrat', sans-serif; /* Updated font family */
+  font-weight: 800; /* Bold font weight */
+  /* Add glowing effect */
+  color: #fff;
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4, 0 0 60px #ff69b4, 0 0 70px #ff69b4;
+  margin-bottom: 5px; /* Reduce space between heading and sub-heading */
+}
+
+
+.sub-heading {
+  font-size: 1.2rem; /* Reduced font size */
+  color: #fff;
+  margin-top: 0; /* Removed top margin to decrease spacing */
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Fill remaining space */
+  padding: 20px; /* Adjusted padding to create space at the top */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  gap: 20px;
+  padding: 20px; /* Adjusted padding to center the cards vertically */
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  background-color: #2c3e50; /* Dark blue */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; /* Ensure images do not overflow */
+  animation: popUp 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Pop up animation */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+  color: #fff;
+  font-size: 1.6em; /* Larger heading */
+  font-weight: bold; /* Bold text */
+  text-transform: uppercase; /* Capitalized text */
+  animation: glowingText 2s infinite alternate; /* Glowing text animation */
+  margin-top: 10px; /* Space between image and text */
+}
+
+.card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1); /* Scale up image on hover */
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+  
+  

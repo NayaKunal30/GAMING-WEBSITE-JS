@@ -1,0 +1,130 @@
+* {
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+}
+
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: linear-gradient(109.6deg, rgb(0, 37, 84) 11.2%, rgba(0, 37, 84, 0.32) 100.2%);
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Ensure vertical alignment */
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.turn-container {
+    width: 170px;
+    height: 80px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+}
+
+.turn-container h3 {
+    margin: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.turn-container .turn-box {
+    border: 3px solid rgb(0, 0, 0);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.turn-container .turn-box:nth-child(even) {
+    border-right: none;
+}
+
+.bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 85px;
+    height: 40px;
+    background-color: #00ff0d;
+    z-index: -1;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 250px;
+    width: 250px;
+    margin: 30px auto;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.box {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 700;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.box:hover {
+    background-color:#d59bf6; 
+}
+
+#play-again {
+    background-color: #0fefbd;
+    padding: 10px 25px;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+#play-again:hover {
+    padding: 10px 40px;
+    background-color: #08D9D6;
+    color: #000;
+}
+
+#top-image {
+    max-width: 100%; /* Make the image responsive */
+    margin-top: 20px; /* Adjust the margin to move the image below */
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin-top: 50px; /* Adjust as needed */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin-top: 100px; /* Adjust as needed */
+    }
+}
+.footer {
+    text-align: center;
+}
+footer.footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+
